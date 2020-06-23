@@ -1,0 +1,21 @@
+{% extends 'accounts/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<p>Customer: <b>{{customer.name}}</b></p>
+<form action="" method="POST">
+	{% csrf_token %}
+{{ formset.management_form }}
+{% for form in formset %}
+
+	{{form}}
+	<hr>
+{% endfor %}
+	
+	<input type="submit"  name="Submit">
+
+</form>
+
+{% endblock %}
