@@ -50,9 +50,10 @@
 					</div>
 					<div style="flex:1"><p>₹{{item.get_total|floatformat:2}}</p>
 					 </div>
+					 {% if user.is_authenticated %}
 				<a style="color: inherit;" href="{%url 'removeitem' item.product.id  %}"><i class="fa fa-trash"> </i></a>
 				</div>
-				
+				{%endif%}
 				{% endfor %}
 			</div>
 		</div>
